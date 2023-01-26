@@ -1,16 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
+
 :root {
   --color-primary: #078B83;
   --color-secondary: #36A087;
-  --color-yellow: #9FB17C;
-  --color-orange: #F7E39D;
-  --color-purple: #DD9756;
+  --color-green-light: #9FB17C;
+  --color-yellow: #F7E39D;
+  --color-orange: #DD9756;
   --color-white: #ffffff;
-
 }
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 body {
@@ -45,4 +47,27 @@ body {
   align-items: center;
   border: 1px solid var(--color-white);
   border-radius: 10px;
+  cursor: pointer;
+  font-size: 65px;;
+}
+
+.results p {
+  height: 30px;
+}
+
+.options {
+  
+}
+
+.reset-game {
+  background-color: var(--color-green-light);
+  border: none;
+  font-size: 22px;
+  padding: 10px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: 0.3s all ease-in-out;
+}
+.reset-game:hover {
+  background-color: var(--color-orange);
 }
