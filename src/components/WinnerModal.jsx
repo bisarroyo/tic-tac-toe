@@ -2,7 +2,6 @@ export function WinnerModal ({ winner }) {
   if (winner === null) return null
 
   const textWinner = winner === false ? 'empate' : 'Ganó'
-  console.log('algo')
   return (
 
     <div>
