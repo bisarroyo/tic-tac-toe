@@ -42,7 +42,7 @@ function App () {
         {board.map((square, i) => {
           return (
             <div className='square' key={i} onClick={() => updateBoard(i)}>
-              <div className='item'>{square}</div>
+              <div className={`${square}`}>{square}</div>
             </div>
           )
         })}
