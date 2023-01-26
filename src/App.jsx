@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { WinnerModal } from './components/WinnerModal'
 import './App.css'
 import { TURN } from './constants'
 import { checkWinner, checkEndGame } from './logic/board'
