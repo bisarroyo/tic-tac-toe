@@ -48,11 +48,14 @@ function App () {
           )
         })}
       </section>
-      <section>
-        <WinnerModal winner={winner} />
+      <section className='results'>
+        <p>
+          {winner === false && ' Empate'}
+          {winner && ` Ganó ${winner}`}
+        </p>
       </section>
       <section className='options'>
-        <button onClick={resetGame}>Reset game</button>
+        <button className='reset-game' onClick={resetGame}>Reset Game</button>
       </section>
     </main>
   )
