@@ -1,4 +1,9 @@
 import { useState } from 'react'
+import { cubicBezier, motion } from 'framer-motion'
+
+import { MouseFollower } from './components/Cursor'
+import { Modal } from './components/Modal'
+
 import './App.css'
 import { TURN } from './constants'
 import { checkWinner, checkEndGame } from './logic/board'
@@ -37,25 +42,57 @@ function App () {
   }
   return (
     <main className='container'>
-      <h1>TIC-TAC-TOE</h1>
+      <MouseFollower turn={turn} />
+      <motion.h1
+        initial={{
+          scale: 0
+        }}
+        animate={{
+          scale: 1
+        }}
+      >
+        TIC-TAC-TOE
+      </motion.h1>
       <section className='board'>
         {board.map((square, i) => {
           return (
-            <div className='square' key={i} onClick={() => updateBoard(i)}>
+            <motion.div
+              initial={{
+                opacity: 0
+              }}
+              animate={{
+                opacity: 1
+              }}
+              className='square'
+              key={i}
+              onClick={() => updateBoard(i)}
+            >
               <div className={`${square}`}>{square}</div>
-            </div>
+            </motion.div>
           )
         })}
       </section>
       <section className='results'>
         <p>
           {winner === false && ' Empate'}
-          {winner && ` Ganó ${winner}`}
+          {winner && `Ganó ${winner}`}
         </p>
       </section>
-      <section className='options'>
+      <motion.section
+        initial={{
+          opacity: 0
+        }}
+        animate={{
+          opacity: 1
+        }}
+        transition={{
+          duration: 1,
+          transition: cubicBezier(0.58, 0.54, 0, 0.58)
+        }}
+        className='options'
+      >
         <button className='reset-game' onClick={resetGame}>Reset Game</button>
-      </section>
+      </motion.section>
     </main>
   )
 }
